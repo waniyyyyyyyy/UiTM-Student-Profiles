@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us - UiTM Student Profiles</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/logouitm.png" type="image/png">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Chartjs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- style.css-->
+     <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <style>
+ /* Team Section */
+h1.text-center {
+  margin-bottom: 3rem; /* Adds more space below the heading */
+}
+
+.team-picture {
+  width: 200px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.team-section {
+    margin-bottom: 50px; /* Adjust the spacing as needed */
+  }
+
+.team-member:hover {
+        background-color: transparent;
+        transform: scale(1.0);
+        transition: all 0.3s;
+        border-radius: 15px;
+        padding: 10px;
+      }
+
+.img-fluid {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+
+/* Adjust layout on smaller screens */
+@media (max-width: 768px) {
+  .team-picture {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+footer.footer {
+        background-color: #343a40;
+        color: #fff;
+        padding: 20px 0;
+      }
+      footer.footer a {
+        color: #007BFF;
+        text-decoration: none;
+      }
+      footer.footer a:hover {
+        text-decoration: underline;
+      }
+      footer .social-icons a {
+        color: #fff;
+        margin: 0 10px;
+        font-size: 1.2rem;
+      }
+  </style>
+  <body>
+    <!-- Header -->
+    <div class="container my-4">
+      <div class="title">UiTM STUDENT PROFILES</div>
+  </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+          <a href="profile.html">
+              <img src="img/profile.png" alt="USP logo" width="40px">
+          </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="exploreprofile.html">Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">FAQs</a>
+            </li> 
+          </ul>
+          <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+              <label class="form-check-lable" for="darkModeToggle" id="themeLabel">Dark Mode</label>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+   <!-- About Section -->
+<div class="container my-5">
+  <h1 class="text-center"> ABOUT US </h1>
+  <p class="lead text-center">We bring the UiTM community together—one student at a time.</p>
+  <div class="row mt-4">
+    <div class="col-lg-6">
+      <h2>Our Mission</h2>
+      <p>
+        To provide an innovative platform where UiTM students can showcase their academic excellence, creative talents, and professional achievements, while connecting with peers, faculty, and industry leaders worldwide.
+      </p>
+      <h2>Our Vision</h2>
+      <p>
+        To bridge the gap between academia and industry, becoming the leading platform for empowering students by highlighting their brilliance and fostering opportunities for personal and professional growth.
+      </p>
+    </div>
+    <div class="col-lg-6">
+      <img src="img/bguitm.jpg" class="img-fluid rounded" alt="Our Mission">
+    </div>
+  </div>
+</div>
+<hr>
+
+<!-- Team Section -->
+<div class="container my-5 team-section">
+  <h1 class="text-center">✨ Meet Our Inspiring Team ✨</h1>
+  <p class="lead text-center">The dedicated leaders behind UiTM’s mission and vision.</p>
+  <div class="row text-center">
+    <div class="col-lg-3 team-member">
+      <img src="img/teacher1.jpg" class="team-picture mb-3" alt="Rector">
+      <h5>Rector</h5>
+      <p>Leader of UiTM</p>
+    </div>
+    <div class="col-lg-3 team-member">
+      <img src="img/teacher2.jpg" class="team-picture mb-3" alt="Deputy Vice Chancellor">
+      <h5>Deputy Vice Chancellor</h5>
+      <p>Academic Affairs & Research</p>
+    </div>
+    <div class="col-lg-3 team-member">
+      <img src="img/teacher3.jpg" class="team-picture mb-3" alt="Dean of Faculty">
+      <h5>Dean of Faculty</h5>
+      <p>Leading Academic Development</p>
+    </div>
+    <div class="col-lg-3 team-member">
+      <img src="img/teacher4.jpg" class="team-picture mb-3" alt="Head of Student Affairs">
+      <h5>Head of Student Affairs</h5>
+      <p>Fostering Student Growth and Engagement</p>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container text-center">
+          <p>&copy; 2024 UiTM Student Profiles. All Rights Reserved.</p>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-facebook"></i>
+              </a>
+              <a href="https://x.com/?lang=en" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-instagram"></i>
+              </a>
+          </div>
+      </div>
+  </footer>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    <!-- Darkmode script -->
+     <script>
+         // Function to set the theme
+         function setTheme(theme) {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+            localStorage.setItem("theme", theme);
+            document.getElementById("themeLabel").innerText =
+                theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+        }
+        
+        // Check if dark mode was previously set in localStorage
+        window.onload = function () {
+            // Check if the user is logged in
+            if (!localStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        
+            // Apply saved theme if it exists
+            let savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                setTheme(savedTheme);
+                if (savedTheme === "dark") {
+                    document.getElementById("darkModeToggle").checked = true;
+                }
+            }
+        
+            // Dark mode toggle event listener
+            document
+                .getElementById("darkModeToggle")
+                .addEventListener("change", function (event) {
+                    if (event.target.checked) {
+                        setTheme("dark");
+                    } else {
+                        setTheme("");
+                    }
+                });
+        };
+        
+        // Handle the search field input event to check login status
+        document.getElementById("floatingSearch").addEventListener("input", function (event) {
+            if (!localStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        });
+     </script>
+    </body>
+</html>

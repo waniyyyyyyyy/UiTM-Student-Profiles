@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UiTM Student Profiles</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/logouitm.png" type="image/png">
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Chartjs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- style.css-->
+     <link rel="stylesheet" href="css/style.css"/>
+     
+ </head>
+<style>
+    /* Ensure that the background and text color of the sections stay fixed */
+.call-to-action, .house-highlights {
+    background-color: #fef9ef !important;
+    color: #333 !important;
+}
+
+.call-to-action ul li {
+    color: #333 !important;
+}
+
+.house-highlights h4 {
+    color: #333 !important;
+}
+
+/* Override dark mode for the Call to Action section */
+[data-bs-theme="dark"] .call-to-action {
+    background-color: #fef9ef !important;
+    color: #333 !important;
+}
+
+[data-bs-theme="dark"] .house-highlights {
+    background-color: #fef9ef !important;
+    color: #333 !important;
+}
+
+[data-bs-theme="dark"] .house-highlights h4 {
+    color: #333 !important;
+}
+
+    .welcome-container {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        color: white; /* Ensure the text is white */
+        height: 18%;
+    }
+
+    .welcome-container .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* 50% transparency */
+        z-index: 1;
+    }
+
+    .welcome-container .container {
+        position: relative;
+        z-index: 2; /* Ensure text is above the overlay */
+    }
+    .card-body h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#houseDistributionChart, #magicalAchievementsChart, #housePerformanceChart {
+    width: 100%;
+    height: 300px; /* Adjust height for better appearance */
+}
+.card-img-top {
+    width: 100%; /* Ensure the images fill the card width */
+    height: 400px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensures the image maintains aspect ratio and covers the area */
+}
+
+
+
+      footer.footer {
+        background-color: #343a40;
+        color: #fff;
+        padding: 20px 0;
+      }
+      footer.footer a {
+        color: #007BFF;
+        text-decoration: none;
+      }
+      footer.footer a:hover {
+        text-decoration: underline;
+      }
+      footer .social-icons a {
+        color: #fff;
+        margin: 0 10px;
+        font-size: 1.2rem;
+      }
+</style>
+  <body>
+
+    <!-- Header -->
+    <div class="container my-4">
+        <div class="title">UiTM STUDENT PROFILES</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a href="profile.html">
+                <img src="img/profile.png" alt="USP logo" width="40px">
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exploreprofile.html">Profiles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQs</a>
+              </li>              
+            </ul>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+                <label class="form-check-lable" for="darkModeToggle" id="themeLabel">Dark Mode</label>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Content -->
+
+     <main>
+
+
+  <!-- Main Content Section --> 
+
+     
+
+     <div class="container-fluid welcome-container" style="background-image: url('img/bg.jpg');">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-2 text-center">
+                    <img src="img/logouitm.png" alt="UiTM" width="200px"/>
+                </div>
+                <div class="col-md-10">
+                    <h3> Welcome to UiTM Student Profiles! </h3>
+                    <h6> Universiti Teknologi MARA </h6>
+                    <p>  This platform is dedicated to celebrating the achievements, talents, and aspirations of Universiti Teknologi MARA's students. Here, you can explore the unique journeys of our diverse student community, showcasing their academic excellence, creativity, and professional growth. Whether you're seeking inspiration, collaboration, or talent, this platform bridges students with endless opportunities. Join us in celebrating UiTM's vibrant community, where potential thrives and futures are shaped.</p>
+                
+                    <a href="exploreprofile.html" class="btn btn-warning ">Explore Profiles</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="background-overlay"></div>
+    </div>
+
+    
+
+    <!-- Content -->
+
+    <main>
+        <div class="container my-5">
+            <!-- UiTM Student Highlights Section -->
+            <h3 class="text-center text-uppercase">UiTM Student Highlights</h3>
+            <p class="text-center text-muted">Celebrate the achievements, talents, and aspirations of UiTM students. Where do you belong in this vibrant community?</p>
+            <div class="row my-4 student-highlights">
+                <div class="col-md-6 py-3" style="color:#000000; background-color: #f7f7f7; border-left: 5px solid #b71c1c;">
+                    <h4 class="text-danger">📚 Academic Excellence</h4>
+                    <p>From top grades to groundbreaking research, UiTM students excel academically. Are you ready to showcase your intellectual prowess?</p>
+                </div>
+                <div class="col-md-6 py-3" style="color:#000000; background-color: #f7f7f7; border-left: 5px solid #1a237e;">
+                    <h4 class="text-primary">🎨 Creative Talents</h4>
+                    <p>Whether in design, art, or innovation, UiTM nurtures creativity. Are you ready to share your artistic vision with the world?</p>
+                </div>
+                <div class="col-md-6 py-3" style="color:#000000; background-color: #f7f7f7; border-left: 5px solid #ff9800;">
+                    <h4 class="text-warning">💼 Professional Growth</h4>
+                    <p>From internships to networking, UiTM opens doors to the professional world. Ready to shape your career?</p>
+                </div>
+                <div class="col-md-6 py-3" style="color:#000000; background-color: #f7f7f7; border-left: 5px solid #2e7d32;">
+                    <h4 class="text-success">🌍 Student Empowerment</h4>
+                    <p>At UiTM, students are empowered to lead and make a difference in their communities. Ready to leave your mark?</p>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="container my-4">
+            <h3 class="text-center">Featured Articles</h3>
+            <hr></hr>
+            <div class="row">
+                <!-- Article 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/article1.jpg" class="card-img-top" alt="Article 1">
+                        <div class="card-body">
+                            <h5 class="card-title">The Evolution of UiTM: A Legacy of Excellence</h5>
+                            <p class="card-text">Explore the remarkable growth and achievements of Universiti Teknologi MARA (UiTM), a leading institution that has shaped the academic landscape of Malaysia for decades.</p>
+                            <!-- Button to open modal -->
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#articleModal1">Read More</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Article 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/article22.jpg" class="card-img-top" alt="Article 2">
+                        <div class="card-body">
+                            <h5 class="card-title">UiTM's Innovative Approach to Research and Development</h5>
+                            <p class="card-text">Discover the cutting-edge research and groundbreaking innovations taking place at UiTM. Learn how the university is contributing to Malaysia's technological and industrial advancements.</p>
+                            <!-- Button to open modal -->
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#articleModal2">Read More</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Article 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/article3.jpg" class="card-img-top" alt="Article 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Celebrating UiTM's Diverse Student Community</h5>
+                            <p class="card-text">Explore the vibrant student life at UiTM. From cultural festivals to leadership programs, our students are making an impact both on campus and in the community.</p>
+                            <!-- Button to open modal -->
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#articleModal3">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for Article 1 -->
+        <div class="modal fade" id="articleModal1" tabindex="-1" aria-labelledby="articleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="articleModalLabel1">The Evolution of UiTM: A Legacy of Excellence</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>UiTM has a rich history that spans over several decades, playing a pivotal role in transforming higher education in Malaysia. From its humble beginnings as a small institution for Malaysians to its rise as a world-class university, UiTM continues to uphold its mission of providing high-quality education and fostering social mobility for students from diverse backgrounds.</p>
+                        <p>Learn about the university's milestones, contributions to the country’s educational system, and how it remains committed to its role as a leader in academia and research.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for Article 2 -->
+        <div class="modal fade" id="articleModal2" tabindex="-1" aria-labelledby="articleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="articleModalLabel2">UiTM's Innovative Approach to Research and Development</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>UiTM is dedicated to fostering innovation, with numerous research centers and collaborations across industries. From sustainable technology to medical research, UiTM is driving change and contributing to global knowledge. The university actively encourages students and faculty to engage in impactful research, offering opportunities for international collaboration and industry partnerships.</p>
+                        <p>Read more about the groundbreaking projects and initiatives that are helping to shape the future of Malaysia and the world.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for Article 3 -->
+        <div class="modal fade" id="articleModal3" tabindex="-1" aria-labelledby="articleModalLabel3" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="articleModalLabel3">Celebrating UiTM's Diverse Student Community</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>UiTM is proud of its diverse student body, consisting of individuals from all walks of life, cultures, and backgrounds. This diversity is a driving force behind the university's rich cultural programs, leadership initiatives, and student organizations. Through various campus activities, students have the chance to explore their passions, contribute to their communities, and develop lifelong friendships.</p>
+                        <p>Explore how UiTM's inclusive environment fosters personal growth, creativity, and social responsibility among its students.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Modal for Article 2 -->
+        <div class="modal fade" id="articleModal2" tabindex="-1" aria-labelledby="articleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="articleModalLabel2">The Legacy of Hogwarts: A Journey Through Its Magical History</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Hogwarts School of Witchcraft and Wizardry has a long and magical history. From its founding by the four great wizards—Godric Gryffindor, Helga Hufflepuff, Rowena Ravenclaw, and Salazar Slytherin—Hogwarts has played a pivotal role in shaping the wizarding world. It is not only a school but also a symbol of magical excellence and unity among witches and wizards.</p>
+                        <p>Over the centuries, Hogwarts has witnessed some of the most significant events in the wizarding world. From the rise of dark wizards to the triumphs of the students, the school has always been at the heart of magical history.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for Article 3 -->
+        <div class="modal fade" id="articleModal3" tabindex="-1" aria-labelledby="articleModalLabel3" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="articleModalLabel3">Top 10 Magical Creatures You Should Know About</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Magical creatures are an essential part of the wizarding world, from friendly creatures like Hippogriffs to dangerous beings such as Dragons. These creatures have unique characteristics and magical abilities that make them crucial to the study of magic.</p>
+                        <p>In this article, we will explore some of the most fascinating creatures that Hogwarts students encounter in their studies, as well as those found in the wider magical world. You'll learn about their behavior, abilities, and how they have shaped wizarding history.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+      
+       
+    <hr>
+
+    <div class="container my-5">
+        <!-- Call to Action Section -->
+        <h3 class="text-center text-uppercase">Begin Your Journey at UiTM</h3>
+        <p class="text-center text-muted"><em>Step into the dynamic world of UiTM. A future full of opportunities awaits!</em></p>
+        <div class="p-4 rounded call-to-action" style="background-color: #fef9ef; border: 2px dashed #f39c12;">
+            <ul class="list-unstyled text-center">
+                <li class="mb-3"><strong>🔍 Explore:</strong> Discover the remarkable achievements, talents, and stories of UiTM students, and connect with the vibrant student community.</li>
+                <li class="mb-3"><strong>🌟 Learn:</strong> Dive into UiTM's academic excellence, research innovations, and student-led initiatives through our featured articles.</li>
+                <li class="mb-3"><strong>🎓 Connect:</strong> Get insights into UiTM's diverse student organizations, programs, and opportunities that shape the future of its graduates.</li>
+            </ul>
+            <p class="text-center mt-4"><em>What are you waiting for?</em></p>
+            <div class="text-center">
+                <a href="#" class="btn btn-warning btn-lg text-uppercase">Start Your Journey</a>
+            </div>
+        </div>
+    </div>
+    
+       </main>
+   
+      <!-- Footer -->
+      <footer class="footer">
+       <div class="container text-center">
+           <p>&copy; 2024 UiTM Student Profiles. All Rights Reserved.</p>
+           <div class="social-icons">
+               <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-facebook"></i>
+               </a>
+               <a href="https://x.com/?lang=en" target="_blank" rel="noopener noreferrer">
+                   <i class="fa-brands fa-x-twitter"></i>
+               </a>
+               <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-linkedin"></i>
+               </a>
+               <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-instagram"></i>
+               </a>
+           </div>
+       </div>
+   </footer>
+
+
+
+    
+    
+    <!-- Add the following to your CSS -->
+   
+    </style>
+    
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    <!-- Darkmode script -->
+    <script>
+        // Function to set the theme
+        function setTheme(theme) {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+            localStorage.setItem("theme", theme);
+            document.getElementById("themeLabel").innerText =
+                theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+        }
+        
+        // Check if dark mode was previously set in localStorage
+        window.onload = function () {
+            // Check if the user is logged in
+            if (!localStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        
+            // Apply saved theme if it exists
+            let savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                setTheme(savedTheme);
+                if (savedTheme === "dark") {
+                    document.getElementById("darkModeToggle").checked = true;
+                }
+            }
+        
+            // Dark mode toggle event listener
+            document
+                .getElementById("darkModeToggle")
+                .addEventListener("change", function (event) {
+                    if (event.target.checked) {
+                        setTheme("dark");
+                    } else {
+                        setTheme("");
+                    }
+                });
+        };
+        
+        // Handle the search field input event to check login status
+        document.getElementById("floatingSearch").addEventListener("input", function (event) {
+            if (!localStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        });
+        </script>
+        
+    </body>
+</html>

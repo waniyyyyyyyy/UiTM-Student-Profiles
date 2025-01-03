@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile Students - UiTM Student Profiles</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/logouitm.png" type="image/png">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Chartjs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- style.css-->
+     <link rel="stylesheet" href="css/style.css"/>
+     
+ </head>
+<style>
+
+      footer.footer {
+        background-color: #343a40;
+        color: #fff;
+        padding: 20px 0;
+      }
+      footer.footer a {
+        color: #007BFF;
+        text-decoration: none;
+      }
+      footer.footer a:hover {
+        text-decoration: underline;
+      }
+      footer .social-icons a {
+        color: #fff;
+        margin: 0 10px;
+        font-size: 1.2rem;
+      }
+      
+      
+
+</style>
+  <body>
+
+    <!-- Header -->
+    <div class="container my-4">
+        <div class="title">UiTM STUDENT PROFILES</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a href="profile.html">
+                <img src="img/profile.png" alt="USP logo" width="40px">
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exploreprofile.html">Profiles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQs</a>
+              </li>              
+            </ul>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+                <label class="form-check-lable" for="darkModeToggle" id="themeLabel">Dark Mode</label>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Content -->
+
+     <main>
+      <div class="container">
+        <div class="row my-4">
+            <div class="col-md-8">
+                <div class="form-floating">
+                  <select class="form-select bg-body-tertiary" id="floatingSelect" aria-label="Floating label select example">
+                    <option value="all" selected>Select Faculty</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Animal Science">Animal Science</option>
+                    <option value="Sports Management">Sports Management</option>
+                  </select>
+                    <label for="floatingSelect">Faculty</label>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-floating mb-3">
+                    <input type="Search" class="form-control bg-body-tertiary" id="floatingSearch" placeholder="Search">
+                    <label for="floatingSearch">Search Name</label>
+                  </div>
+            </div>
+        </div>
+     </div>
+
+  <div class="container mt-5" id="studentProfiles">
+    <h3><i class="fa-solid fa-list"></i> List of Student Profiles </h3>
+    <hr></hr> 
+    <div class="row my-3">
+      <!-- Gryffindor Students -->
+      <div class="col-md-4 mb-4 student-profile" data-faculty="Computer Science">
+          <div class="card yellow-card border-0 shadow">
+              <div class="card-body">
+                  <div class="text-center mt-4">
+                      <img src="img/hogwart1.jpg" alt="Profile picture student1" 
+                           class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                  </div>
+                  <div class="text-center mt-3">
+                      <h5 class="card-title student-name">Harry Potter</h5>
+                      <p class="card-text">Bachelor of Computer Science</p>
+                  </div>
+                  <div class="text-center mt-3">
+                      <a href="viewprofile1.html" button type="button" class="btn btn-success btn-sm" aria-label="View profile of Harry Potter">
+                           View Profile</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4 mb-4 student-profile" data-faculty="Information Technology">
+          <div class="card yellow-card border-0 shadow">
+              <div class="card-body">
+                  <div class="text-center mt-4">
+                      <img src="img/hogwart2.jpg" alt="Profile picture student2" 
+                           class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                  </div>
+                  <div class="text-center mt-3">
+                      <h5 class="card-title student-name">Hermione Granger</h5>
+                      <p class="card-text">Bachelor of Information Technology</p>
+                  </div>
+                  <div class="text-center mt-3">
+                    <a href="viewprofile2.html" button type="button" class="btn btn-success btn-sm" aria-label="View profile of Hermione Granger">
+                      View Profile</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4 mb-4 student-profile" data-faculty="Computer Science">
+          <div class="card yellow-card border-0 shadow">
+              <div class="card-body">
+                  <div class="text-center mt-4">
+                      <img src="img/hogwart3.jpg" alt="Profile picture student3" 
+                           class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                  </div>
+                  <div class="text-center mt-3">
+                      <h5 class="card-title student-name">Ron Weasley</h5>
+                      <p class="card-text">Bachelor of Computer Science</p>
+                  </div>
+                  <div class="text-center mt-3">
+                    <a href="viewprofile3.html" button type="button" class="btn btn-success btn-sm" aria-label="View profile of Ron Weasley">
+                      View Profile</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Hufflepuff Student -->
+      <div class="col-md-4 mb-4 student-profile" data-faculty="Sports Management">
+        <div class="card yellow-card border-0 shadow">
+            <div class="card-body">
+                <div class="text-center mt-4">
+                    <img src="img/hogwart4.jpg" alt="Profile picture student4" 
+                         class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                </div>
+                <div class="text-center mt-3">
+                    <h5 class="card-title student-name">Cedric Diggory</h5>
+                    <p class="card-text">Bachelor of Sports Management</p>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="viewprofile4.html" button type="button" class="btn btn-success btn-sm" aria-label="View profile of Cedric Diggory">
+                    View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ravenclaw Student -->
+    <div class="col-md-4 mb-4 student-profile" data-faculty="Animal Science">
+      <div class="card yellow-card border-0 shadow">
+          <div class="card-body">
+              <div class="text-center mt-4">
+                  <img src="img/hogwart5.jpg" alt="Profile picture student5" 
+                       class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+              </div>
+              <div class="text-center mt-3">
+                  <h5 class="card-title student-name">Luna Lovegood</h5>
+                  <p class="card-text">Bachelor of Animal Science</p>
+              </div>
+              <div class="text-center mt-3">
+                <a href="viewprofile5.html" button type="button" class="btn btn-success btn-sm" aria-label="View profile of Luna Lovegood">
+                  View Profile</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Slytherin Student -->
+  <div class="col-md-4 mb-4 student-profile" data-faculty="Business Administration">
+    <div class="card yellow-card border-0 shadow">
+        <div class="card-body">
+            <div class="text-center mt-4">
+                <img src="img/hogwart6.jpg" alt="Profile picture student6" 
+                     class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+            </div>
+            <div class="text-center mt-3">
+                <h5 class="card-title student-name">Draco Malfoy</h5>
+                <p class="card-text">Bachelor of Business Administration</p>
+            </div>
+            <div class="text-center mt-3">
+              <a href="viewprofile6.html" button type="button" class="btn btn-success btn-sm" aria-label="View profile of Draco Malfoy">
+                View Profile</a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- Add Profile Button centered -->
+<div class="d-flex justify-content-center align-items-center my-4">
+    <button class="btn btn-primary btn-lg btn-sm" data-bs-toggle="modal" data-bs-target="#addProfileModal">
+        <i class="fa fa-plus-circle"></i> Add New Profile
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addProfileModal" tabindex="-1" aria-labelledby="addProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addProfileModalLabel">Add Student Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Add Profile Form -->
+        <form>
+          <div class="mb-3">
+            <label for="studentName" class="form-label">Student Name</label>
+            <input type="text" class="form-control" id="studentName" placeholder="Enter student name">
+          </div>
+          <div class="mb-3">
+            <label for="studentHouse" class="form-label">Faculty</label>
+            <select class="form-select" id="studentHouse">
+              <option value="Computer Science">Computer Science</option>
+              <option value="Information Technology">Information Technology</option>
+              <option value="RBusiness Administration">Business Administration</option>
+              <option value="Animal Science">Animal Science</option>
+              <option value="Sports Management">Sports Management</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="studentRole" class="form-label">Role</label>
+            <input type="text" class="form-control" id="studentRole" placeholder="Enter student role (e.g., Class Representative)">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save Profile</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+       </main>
+   
+      <!-- Footer -->
+      <footer class="footer">
+       <div class="container text-center">
+           <p>&copy; 2024 UiTM Student Profiles. All Rights Reserved.</p>
+           <div class="social-icons">
+               <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-facebook"></i>
+               </a>
+               <a href="https://x.com/?lang=en" target="_blank" rel="noopener noreferrer">
+                   <i class="fa-brands fa-x-twitter"></i>
+               </a>
+               <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-linkedin"></i>
+               </a>
+               <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-instagram"></i>
+               </a>
+           </div>
+       </div>
+   </footer>
+
+
+
+    
+    
+    <!-- Add the following to your CSS -->
+   
+    </style>
+    
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    <!-- Darkmode script -->
+     <script>
+
+      // Search functionality
+  document.getElementById("floatingSearch").addEventListener("input", function () {
+    const searchQuery = this.value.toLowerCase();
+    const profiles = document.querySelectorAll(".student-profile");
+
+    profiles.forEach(profile => {
+      const studentName = profile.querySelector(".student-name").textContent.toLowerCase();
+      if (studentName.includes(searchQuery)) {
+        profile.style.display = "block";
+      } else {
+        profile.style.display = "none";
+      }
+    });
+  });
+
+  // Faculty dropdown functionality
+  document.getElementById("floatingSelect").addEventListener("change", function () {
+  const selectedFaculty = this.value; // Get the selected value
+  const profiles = document.querySelectorAll(".student-profile");
+
+  profiles.forEach(profile => {
+    const faculty = profile.getAttribute("data-faculty");
+    // Show all profiles if "all" is selected, otherwise filter by faculty
+    if (selectedFaculty === "all" || faculty === selectedFaculty) {
+      profile.style.display = "block";
+    } else {
+      profile.style.display = "none";
+    }
+  });
+});
+     // Function to set the theme
+     function setTheme(theme) {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+            localStorage.setItem("theme", theme);
+            document.getElementById("themeLabel").innerText =
+                theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+        }
+        
+        // Check if dark mode was previously set in localStorage
+        window.onload = function () {
+            // Check if the user is logged in
+            if (!localStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        
+            // Apply saved theme if it exists
+            let savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                setTheme(savedTheme);
+                if (savedTheme === "dark") {
+                    document.getElementById("darkModeToggle").checked = true;
+                }
+            }
+        
+            // Dark mode toggle event listener
+            document
+                .getElementById("darkModeToggle")
+                .addEventListener("change", function (event) {
+                    if (event.target.checked) {
+                        setTheme("dark");
+                    } else {
+                        setTheme("");
+                    }
+                });
+        };
+        
+        // Handle the search field input event to check login status
+        document.getElementById("floatingSearch").addEventListener("input", function (event) {
+            if (!localStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        });
+        
+     </script>
+    </body>
+</html>
